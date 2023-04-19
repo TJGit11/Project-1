@@ -20,6 +20,13 @@
     /* Black w/ opacity */
 }
 
+
+body {
+    background-color: tan;
+    /* height: 100%; */
+}
+
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
