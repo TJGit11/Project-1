@@ -1,3 +1,15 @@
+let jokesBox = document.createElement("joke-box")
+
+p.addeventlistener("click" , function()){
+p.style.hidden = "appear"
+    // fetch for jokes
+fetch("https://api.humorapi.com/jokes/random?api-key=bcad527b721f43e9afccea7f051501b8")
+    .then(res => res.json())
+    .then((jokesBox) => {
+       document.body.append(jokesBox)
+    })
+}
+}
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -11,7 +23,6 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
     modal.style.display = "block";
 }
-let jokesBox = document.createElement("joke-box")
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -24,10 +35,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-fetch("https://api.humorapi.com/jokes/random?api-key=bcad527b721f43e9afccea7f051501b8")
-.then(function(res){
-    return res.json()
-})
-.then(function(data){
-console.log(data);
-})
