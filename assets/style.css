@@ -53,7 +53,7 @@ body {
     cursor: pointer;
 }
 
-body #joke {
+body #meme {
 
     grid-template-columns: 1fr;
     background-color: whitesmoke;
