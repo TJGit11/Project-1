@@ -20,7 +20,6 @@
     /* Black w/ opacity */
 }
 
-
 body {
     background-color: tan;
     /* height: 100%; */
@@ -43,7 +42,7 @@ body {
 /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
+    float: center;
     font-size: 30px;
     font-weight: bolder;
 }
@@ -55,9 +54,26 @@ body {
     cursor: pointer;
 }
 
-#joke-box {
-    width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
-  }
+body.box {
+    overflow: auto;
+}
+
+#meme{
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgrey;
+}
+
+#joke{
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+    background-color: lightgrey;
+}

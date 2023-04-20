@@ -1,15 +1,33 @@
-let jokesBox = document.createElement("joke-box")
+let jokesBox = document.querySelector("#joke")
+console.log(jokesBox)
+let memesBox = document.querySelector("meme")
 
-p.addeventlistener("click" , function()){
-p.style.hidden = "appear"
-    // fetch for jokes
-fetch("https://api.humorapi.com/jokes/random?api-key=bcad527b721f43e9afccea7f051501b8")
-    .then(res => res.json())
-    .then((jokesBox) => {
-       document.body.append(jokesBox)
+
+// fetch for jokes
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '8b37e2d764mshfc38b857ca7cac2p1da4adjsn192eca3db725',
+        'X-RapidAPI-Host': 'jokeapi-v2.p.rapidapi.com'
+    }
+};
+
+fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&blacklistFlags=nsfw%2Cracist', options)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response)
+        let pTag = document.createElement("p")
+        let deliveryPTag = document.createElement("p")
+        pTag.textContent = response.setup
+        deliveryPTag.textContent = response.delivery
+
+        jokesBox.append(pTag)
+        jokesBox.append(deliveryPTag)
     })
-}
-}
+    .catch(err => console.error(err));
+
+
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -35,3 +53,4 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
