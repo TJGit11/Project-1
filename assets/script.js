@@ -125,3 +125,4 @@ let storedActivity = localStorage.getItem("Activity");
 historyActivity.textContent = storedActivity;
 console.log(storedActivity);
 
+
