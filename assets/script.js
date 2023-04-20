@@ -86,6 +86,7 @@ myButton.addEventListener('click', function () {
             console.log(data);
             let memeImg = document.createElement("img");
             memeImg.src = data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url;
+            memesBox.innerHTML = '';
             memesBox.appendChild(memeImg);
         })
 
@@ -93,12 +94,13 @@ myButton.addEventListener('click', function () {
         .then(response => response.json())
         .then(response => {
             console.log(response)
-            let ulTag = document.createElement("ul")
-            let deliveryulTag = document.createElement("ul")
-            ulTag.textContent = response.setup
-            deliveryulTag.textContent = response.delivery
-            jokesBox.append(ulTag)
-            jokesBox.append(deliveryulTag)
+            let ulTag = document.createElement("ul");
+            let deliveryulTag = document.createElement("ul");
+            ulTag.textContent = response.setup;
+            deliveryulTag.textContent = response.delivery;
+            jokesBox.innerHTML = '';
+            jokesBox.append(ulTag);
+            jokesBox.append(deliveryulTag);
         })
         .catch(err => console.error(err));
 });
