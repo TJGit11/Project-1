@@ -1,12 +1,12 @@
 body {
-    /* background-color: green; */
-}
-
-body {
     background-color: tan;
+    max-width: 100vw;
     /* height: 100%; */
 }
 
+.fetchContainer {
+    display: flex;
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -24,7 +24,6 @@ body {
 /* The Close Button */
 .close {
     color: #aaa;
-    float: center;
     font-size: 30px;
     font-weight: bolder;
 }
@@ -54,7 +53,6 @@ body.box {
     width: 30%;
     padding-left: 15px;
     margin-left: 15px;
-    float: right;
     font-style: italic;
     background-color: lightgrey;
 }
@@ -64,7 +62,7 @@ body.box {
     width: 30%;
     padding-left: 15px;
     margin-left: 15px;
-    float: left;
+
     font-style: italic;
     background-color: lightgrey;
 }
