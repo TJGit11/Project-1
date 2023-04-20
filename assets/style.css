@@ -69,8 +69,12 @@ body #meme {
     justify-content: flex-end;
 }
 
-body.box {
-
-    overflow: auto;
+body aside {
+    align-items: center;
+    /* justify-content: flex-end; */
 
 }
+
+/* a [href='https://api.imgflip.com/get_memes'] {
+    height: 10px;
+} */

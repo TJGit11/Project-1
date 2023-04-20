@@ -1,3 +1,6 @@
+
+memeEl = document.querySelectorAll("p")
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -23,3 +26,22 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+
+fetch('https://api.imgflip.com/get_memes')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+
+let memeEl = document.textContent("p")
+
+
+// function logMeme(m) {
+    //     console.log(m)
+    // }
+
+// let setMeme = browser.array.set(
+//     { url: 'https://api.imgflip.com/get_memes' }
+// );
+
+// setMeme.then(logMeme)
