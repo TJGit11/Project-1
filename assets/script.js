@@ -23,14 +23,15 @@
 //     modal.style.display = "none";
 //   }
 // };
-// let newDiv = document.querySelector("div");
+let historyActivity = document.getElementById("history");
+
 fetch("https://www.boredapi.com/api/activity")
   .then((response) => response.json())
   .then((data) => {
     console.log(data.activity);
-    localStorage.setItem("Activity 1", data.activity);
+    localStorage.setItem("Activity", data.activity);
   });
+let storedActivity = localStorage.getItem("Activity");
 
-console.log(localStorage.getItem("Activity 1"));
-
-console.log(localStorage);
+historyActivity.textContent = storedActivity;
+console.log(storedActivity);
