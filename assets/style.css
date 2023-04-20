@@ -68,7 +68,6 @@ body {
     display: flex;
 }
 
-
 body aside {
     align-items: center;
     /* justify-content: flex-end; */
@@ -84,7 +83,7 @@ body.box {
 
 #meme {
     height: 100%;
-    width: 30%;
+    width: auto;
     padding-left: 15px;
     margin-left: 15px;
     font-style: italic;
@@ -99,4 +98,8 @@ body.box {
 
     font-style: italic;
     background-color: lightgrey;
+}
+
+img {
+    max-width: 80%;
 }

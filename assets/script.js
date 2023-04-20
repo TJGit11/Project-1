@@ -93,10 +93,10 @@ window.onclick = function (event) {
 fetch('https://api.imgflip.com/get_memes')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        let memeImg = document.createElement("img")
-        memeImg.src = data.data.memes[Math.floor(Math.random() * 11)].url
-        memesBox.appendChild(memeImg)
+        console.log(data);
+        let memeImg = document.createElement("img");
+        memeImg.src = data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url;
+        memesBox.appendChild(memeImg);
     })
 
 
