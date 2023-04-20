@@ -34,6 +34,7 @@ window.onclick = function (event) {
     }
 
 }
+let myButton = document.getElementById('boredom')
 let jokesBox = document.querySelector("#joke")
 console.log(jokesBox)
 let memesBox = document.querySelector("#meme")
@@ -48,18 +49,6 @@ const options = {
     }
 };
 
-fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?type=twopart&format=json&idRange=0-150&blacklistFlags=nsfw%2Cracist%2Csexist&safe-mode', options)
-    .then(response => response.json())
-    .then(response => {
-        console.log(response)
-        let ulTag = document.createElement("ul")
-        let deliveryulTag = document.createElement("ul")
-        ulTag.textContent = response.setup
-        deliveryulTag.textContent = response.delivery
-        jokesBox.append(ulTag)
-        jokesBox.append(deliveryulTag)
-    })
-    .catch(err => console.error(err));
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -90,15 +79,31 @@ window.onclick = function (event) {
 }
 
 
-fetch('https://api.imgflip.com/get_memes')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        let memeImg = document.createElement("img");
-        memeImg.src = data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url;
-        memesBox.appendChild(memeImg);
-    })
+myButton.addEventListener('click', function () {
+    fetch('https://api.imgflip.com/get_memes')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let memeImg = document.createElement("img");
+            memeImg.src = data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url;
+            memesBox.innerHTML = '';
+            memesBox.appendChild(memeImg);
+        })
 
+    fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?type=twopart&format=json&idRange=0-150&blacklistFlags=nsfw%2Cracist%2Csexist&safe-mode', options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            let ulTag = document.createElement("ul");
+            let deliveryulTag = document.createElement("ul");
+            ulTag.textContent = response.setup;
+            deliveryulTag.textContent = response.delivery;
+            jokesBox.innerHTML = '';
+            jokesBox.append(ulTag);
+            jokesBox.append(deliveryulTag);
+        })
+        .catch(err => console.error(err));
+});
 
 // let memeEl = document.textContent("p")
 
@@ -124,5 +129,4 @@ let storedActivity = localStorage.getItem("Activity");
 
 historyActivity.textContent = storedActivity;
 console.log(storedActivity);
-
 

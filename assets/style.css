@@ -95,11 +95,15 @@ body.box {
     width: 30%;
     padding-left: 15px;
     margin-left: 15px;
-
+    font-size: xx-large;
     font-style: italic;
     background-color: lightgrey;
 }
 
 img {
     max-width: 80%;
+}
+
+.boredom {
+    display: flex;
 }
