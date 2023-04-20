@@ -2,7 +2,6 @@ body {
     /* background-color: green; */
 }
 
-
 body {
     background-color: tan;
     /* height: 100%; */
@@ -25,7 +24,7 @@ body {
 /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
+    float: center;
     font-size: 30px;
     font-weight: bolder;
 }
@@ -35,24 +34,28 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
-
-}
-
-body #meme {
-
-    grid-template-columns: 1fr;
-    background-color: whitesmoke;
-    height: 65%;
-    margin: 15px;
-    padding: 15px;
-    border: red 15px;
-    position: fixed;
-    align-items: center;
-    justify-content: flex-end;
 }
 
 body.box {
-
     overflow: auto;
+}
 
+#meme {
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgrey;
+}
+
+#joke {
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+    background-color: lightgrey;
 }
