@@ -16,7 +16,8 @@ header {
     display: none;
     position: fixed;
     z-index: 1;
-    left: 1 top: 0;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -55,4 +56,47 @@ header {
 .close:focus {
     color: black;
     cursor: pointer;
+}
+
+body {
+    background-color: tan;
+    max-width: 100vw;
+    /* height: 100%; */
+}
+
+.fetchContainer {
+    display: flex;
+}
+
+
+body aside {
+    align-items: center;
+    /* justify-content: flex-end; */
+
+}
+
+/* a [href='https://api.imgflip.com/get_memes'] {
+    height: 10px;
+} */
+body.box {
+    overflow: auto;
+}
+
+#meme {
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    font-style: italic;
+    background-color: lightgrey;
+}
+
+#joke {
+    height: 100%;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+
+    font-style: italic;
+    background-color: lightgrey;
 }
