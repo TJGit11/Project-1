@@ -1,7 +1,7 @@
 let jokesBox = document.querySelector("#joke")
 console.log(jokesBox)
-let memesBox = document.querySelector("meme")
-
+let memesBox = document.querySelector("#meme")
+// memeEl = document.querySelectorAll("p")
 
 // fetch for jokes
 const options = {
@@ -57,6 +57,28 @@ window.onclick = function (event) {
 }
 
 
+fetch('https://api.imgflip.com/get_memes')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        let memeImg = document.createElement("img")
+        memeImg.src = data.data.memes[Math.floor(Math.random() * 11)].url
+        memesBox.appendChild(memeImg)
+    })
+
+
+// let memeEl = document.textContent("p")
+
+
+// function logMeme(m) {
+//     console.log(m)
+// }
+
+// let setMeme = browser.array.set(
+//     { url: 'https://api.imgflip.com/get_memes' }
+// );
+
+// setMeme.then(logMeme)
 let historyActivity = document.getElementById("history");
 
 fetch("https://www.boredapi.com/api/activity")
