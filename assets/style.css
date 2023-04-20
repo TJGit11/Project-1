@@ -68,7 +68,6 @@ body {
     display: flex;
 }
 
-
 body aside {
     align-items: center;
     /* justify-content: flex-end; */
@@ -84,7 +83,7 @@ body.box {
 
 #meme {
     height: 100%;
-    width: 30%;
+    width: auto;
     padding-left: 15px;
     margin-left: 15px;
     font-style: italic;
@@ -96,34 +95,15 @@ body.box {
     width: 30%;
     padding-left: 15px;
     margin-left: 15px;
-
+    font-size: xx-large;
     font-style: italic;
     background-color: lightgrey;
 }
 
-
-/* dark mode stuff */
-#toggle-btn {
-    padding: 0.5em;
-    font-weight: 800;
+img {
+    max-width: 80%;
 }
 
-#toggle-btn:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-.dark-mode-toggle {
-    background: #000;
-    color: #fff;
-}
-
-#theme {
-    width: 100vw;
-    height: 100vh;
-}
-
-.dark-mode-theme {
-    background: #000;
-    color: #fff;
+.boredom {
+    display: flex;
 }
