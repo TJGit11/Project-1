@@ -48,21 +48,18 @@ const options = {
     }
 };
 
-fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&blacklistFlags=nsfw%2Cracist', options)
+fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?type=twopart&format=json&idRange=0-150&blacklistFlags=nsfw%2Cracist%2Csexist&safe-mode', options)
     .then(response => response.json())
     .then(response => {
         console.log(response)
-        let pTag = document.createElement("p")
-        let deliveryPTag = document.createElement("p")
-        pTag.textContent = response.setup
-        deliveryPTag.textContent = response.delivery
-
-        jokesBox.append(pTag)
-        jokesBox.append(deliveryPTag)
+        let ulTag = document.createElement("ul")
+        let deliveryulTag = document.createElement("ul")
+        ulTag.textContent = response.setup
+        deliveryulTag.textContent = response.delivery
+        jokesBox.append(ulTag)
+        jokesBox.append(deliveryulTag)
     })
     .catch(err => console.error(err));
-
-
 
 // Get the modal
 var modal = document.getElementById("myModal");
