@@ -41,21 +41,21 @@ const options = {
 // Get the modal
 var modal = document.getElementById("myModal");
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-// // When the user clicks on the button, open the modal
-// btn.onclick = function () {
-//   modal.style.display = "block";
-// };
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//   modal.style.display = "none";
-// };
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
@@ -68,7 +68,7 @@ myButton.addEventListener("click", function () {
   fetch("https://api.imgflip.com/get_memes")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       let memeImg = document.createElement("img");
       memeImg.src =
         data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url;
@@ -82,7 +82,7 @@ myButton.addEventListener("click", function () {
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       let ulTag = document.createElement("ul");
       let deliveryulTag = document.createElement("ul");
       ulTag.textContent = response.setup;
@@ -94,39 +94,20 @@ myButton.addEventListener("click", function () {
     .catch((err) => console.error(err));
 });
 
-// let memeEl = document.textContent("p")
+// let historyEl = document.getElementById("history");
 
-// function logMeme(m) {
-//     console.log(m)
-// }
+const toggleDarkModeButton = document.getElementById("toggle-dark-mode");
 
-// let setMeme = browser.array.set(
-//     { url: 'https://api.imgflip.com/get_memes' }
-// );
+toggleDarkModeButton.addEventListener("click", function () {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
 
-// setMeme.then(logMeme)
-let historyActivity = document.getElementById("history");
+  const isDarkModeEnabled = body.classList.contains("dark-mode");
+  localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+});
 
-fetch("https://api.imgflip.com/get_memes")
-  .then((response) => response.json())
-  .then((data) => {
-    // console.log(data);
-    localStorage.setItem("Activity", data.activity);
-  });
-
-let storedItems = localStorage.values;
-storedItems.reverse();
-let lastFive = storedItems.slice(0, 5);
-for (let i = 0; i < lastFive.length; i++) {
-  let item = lastFive[i];
-  let itemDiv = document.querySelector("#history");
-  itemDiv.textContent = item;
-  historyActivity.appendChild(itemDiv);
+// Load dark mode preference from local storage
+const isDarkModeEnabled = localStorage.getItem("darkModeEnabled");
+if (isDarkModeEnabled === "true") {
+  document.body.classList.add("dark-mode");
 }
-
-// console.log(historyActivity);
-
-// let storedActivity = localStorage.getItem("Activity");
-
-// historyActivity.textContent = storedActivity;
-// console.log(storedActivity);

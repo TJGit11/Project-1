@@ -64,6 +64,10 @@ body {
     /* height: 100%; */
 }
 
+li {
+    list-style-type: none;
+}
+
 .fetchContainer {
     display: flex;
 }
@@ -90,15 +94,17 @@ body.box {
     background-color: lightgrey;
 }
 
-#joke {
+
+.joke {
     height: 100%;
     width: 30%;
     padding-left: 15px;
     margin-left: 15px;
     font-size: xx-large;
     font-style: italic;
-    background-color: lightgrey;
+    background-color: lightgrey
 }
+
 
 img {
     max-width: 80%;
@@ -106,4 +112,9 @@ img {
 
 .boredom {
     display: flex;
+}
+
+body.dark-mode {
+    background-color: black;
+    /* color: orange; */
 }
