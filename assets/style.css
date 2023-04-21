@@ -1,8 +1,8 @@
 /*Header display */
 header {
 
-    background-color: #053c5e;
-    color: white;
+    background-color: #1d3557;
+    color: #f1faee;
     padding: 20px;
     text-align: center;
     font-size: 20px;
@@ -14,26 +14,26 @@ header {
 /* The Modal background */
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(5, 60, 94);
-    background-color: rgba(5, 60, 94, 0.5);
+    background-color: rgb(29, 53, 87);
+    background-color: rgba(29, 53, 87, 0.5);
 
 }
 
 
 /* Modal content box */
 .modal-content {
-    background-color: #053c5e;
-    color: white;
-    font-size: 20px;
+    background-color: #1d3557;
+    color: #f1faee;
+    font-size: 40px;
     font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: serif;
     text-align: left;
     margin: 12% auto;
     padding: 20px;
@@ -42,10 +42,17 @@ header {
     height: 30%;
 }
 
+button {
+    background-color: rgba(29, 53, 87, 0);
+    color: #f1faee;
+    padding: 5px;
+    font-size: 15px;
+    font-family: serif;
+}
 
 /* The close button */
 .close {
-    color: white;
+    color: #f1faee;
     float: right;
     font-size: 30px;
     font-weight: lighter;
@@ -59,7 +66,7 @@ header {
 }
 
 body {
-    background-color: tan;
+    background-color: #457b9d;
     max-width: 100vw;
     /* height: 100%; */
 }
@@ -91,7 +98,7 @@ body.box {
     padding-left: 15px;
     margin-left: 15px;
     font-style: italic;
-    background-color: lightgrey;
+    background-color: #ffe8d6;
 }
 
 
@@ -102,7 +109,7 @@ body.box {
     margin-left: 15px;
     font-size: xx-large;
     font-style: italic;
-    background-color: lightgrey
+    background-color: #ffe8d6
 }
 
 
@@ -115,6 +122,7 @@ img {
 }
 
 body.dark-mode {
+
     background-color: black;
-    /* color: orange; */
+
 }
